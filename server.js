@@ -24,12 +24,12 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res) => {
-  res.render('maintanence.hbs', {
-    pageTitle: 'Maintenance',
-    maintMessage: 'The site is currently being worked on'
-  });
-});
+// app.use((req, res) => {
+//   res.render('maintanence.hbs', {
+//     pageTitle: 'Maintenance',
+//     maintMessage: 'The site is currently being worked on'
+//   });
+// });
 
 app.use(express.static(__dirname + '/public'));
 
@@ -64,6 +64,12 @@ app.get('/about', (req, res) => {
   //res.send('About page here');
 });
 
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Portfolio and Projects',
+    portfolioMessage: 'Portfolio Will Go Here'
+  });
+});
 //Create a route a /bad and use res.send to reply with json with an errorMessage propert whose value can be whatever you want.
 
 app.get('/bad', (req, res) => {
